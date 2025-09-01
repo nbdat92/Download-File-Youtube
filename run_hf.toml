@@ -1,0 +1,16 @@
+# run_hf.toml
+[hf]
+token       = "hf_xxx_your_token"   # ⚠️ Có thể để trống để dùng ENV HF_TOKEN
+repo_id     = "yourname/yt-dataset"
+repo_type   = "dataset"             # dataset | model | space
+branch      = "main"
+path_prefix = "mp4/"                # thư mục trong repo (vd: "mp4/" hoặc "audio/")
+
+[cookies]
+path = "cookies.txt"                # Netscape cookies (tùy chọn). Có thể để trống.
+
+[downloader]                        # tuỳ chọn: "chế độ lịch sự" để tránh 429
+ratelimit          = 2000000        # ~2MB/s
+sleep_interval     = 2
+max_sleep_interval = 5
+sleep_requests     = 0.5
